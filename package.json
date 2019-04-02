@@ -1,0 +1,14 @@
+{
+  "name": "javascript-simple-calculator",
+  "version": "1.0.0",
+  "description": "js simple calculator",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "ABDev",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

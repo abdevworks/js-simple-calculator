@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,700");
+/* Button Colors */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #000; }
+
+.container {
+  width: 1000px;
+  height: 550px;
+  background-image: url(../img/bgImg.jpg);
+  margin: 20px auto; }
+  .container:after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: auto;
+    width: 1000px;
+    height: 550px;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.2); }
+
+.calculator {
+  width: 320px;
+  height: 520px;
+  background-color: #eaedef;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .calculator .result {
+    height: 120px; }
+    .calculator .result .history {
+      text-align: right;
+      height: 20px;
+      margin: 0 20px;
+      padding-top: 20px;
+      font-size: 15px;
+      color: #919191; }
+    .calculator .result .output {
+      text-align: right;
+      height: 60px;
+      margin: 10px 20px;
+      font-size: 30px; }
+  .calculator .keyboard {
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap; }
+    .calculator .keyboard .operator,
+    .calculator .keyboard .number,
+    .calculator .keyboard .empty {
+      width: 50px;
+      height: 50px;
+      margin: 15px;
+      border-radius: 50%;
+      border-width: 0;
+      font-size: 15px;
+      font-weight: bold; }
+      .calculator .keyboard .operator:focus,
+      .calculator .keyboard .number:focus,
+      .calculator .keyboard .empty:focus {
+        outline: 0; }
+    .calculator .keyboard .number,
+    .calculator .keyboard .empty {
+      background-color: #eaedef; }
+    .calculator .keyboard .number,
+    .calculator .keyboard .operator {
+      cursor: pointer; }
+      .calculator .keyboard .number:active,
+      .calculator .keyboard .operator:active {
+        font-size: 13px; }
+    .calculator .keyboard button:nth-child(4) {
+      font-size: 20px;
+      background-color: #20b2aa; }
+    .calculator .keyboard button:nth-child(8) {
+      font-size: 20px;
+      background-color: #ffa500; }
+    .calculator .keyboard button:nth-child(12) {
+      font-size: 20px;
+      background-color: #f08080; }
+    .calculator .keyboard button:nth-child(16) {
+      font-size: 20px;
+      background-color: #7d93e0; }
+    .calculator .keyboard button:nth-child(20) {
+      font-size: 20px;
+      background-color: #9477af; }

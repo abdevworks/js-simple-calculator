@@ -1,0 +1,115 @@
+$home-image: url(../img/bgImg.jpg);
+$bg-overlay-opacity: 0.2;
+$bg-width: 1000px;
+$bg-height: 550px;
+$bg-margin-top: 20px;
+
+
+// Set Button Color and Font-Size
+@mixin set-button($button-number, $bgc, $fs: $fs-big) {
+    button:nth-child(#{$button-number}) {
+        font-size: $fs;
+        background-color: $bgc;
+    }
+}
+
+
+body {
+    font-family: $ff-ss;
+    background-color: $black;
+}
+
+.container {
+    width: $bg-width;
+    height: $bg-height;
+    background-image: $home-image;
+    margin: $bg-margin-top auto;
+
+    // background-overlay
+    &:after {
+        content: "";
+        position: absolute;
+        top: $bg-margin-top;
+        right: auto;
+        width: $bg-width;
+        height: $bg-height;
+        z-index: 1;
+        background: rgba($primary-color, $bg-overlay-opacity);
+    }
+
+}
+
+.calculator {
+    width: 320px;
+    height: 520px;
+    background-color: $white;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .result {
+        height: 120px;
+
+        .history {
+            text-align: right;
+            height: 20px;
+            margin: 0 20px;
+            padding-top: 20px;
+            font-size: $fs-medium;
+            color: $secondary-color;
+        }
+
+        .output {
+            text-align: right;
+            height: 60px;
+            margin: 10px 20px;
+            font-size: $fs-very-big;
+
+        }
+    }
+
+    .keyboard {
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .operator,
+        .number,
+        .empty {
+            width: 50px;
+            height: 50px;
+            margin: 15px;
+            border-radius: 50%;
+            border-width: 0;
+            font-size: $fs-medium;
+            font-weight: bold;
+
+            &:focus {
+                outline: 0;
+            }
+        }
+
+        .number,
+        .empty {
+            background-color: $white;
+        }
+
+        .number,
+        .operator {
+            cursor: pointer;
+
+            &:active {
+                font-size: $fs-small;
+            }
+        }
+
+        @include set-button($button-number: 4, $bgc: $divide-button);
+        @include set-button($button-number: 8, $bgc: $multiply-button);
+        @include set-button($button-number: 12, $bgc: $subtract-button);
+        @include set-button($button-number: 16, $bgc: $add-button);
+        @include set-button($button-number: 20, $bgc: $result-button);
+    }
+}
